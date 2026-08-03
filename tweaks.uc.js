@@ -1,5 +1,5 @@
 console.log("tweaks.uc.js ran")
-js
+
 if (document.readyState === "complete") {
   window.fullScreen = true;
 } else {
