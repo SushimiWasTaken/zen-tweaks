@@ -1,14 +1,15 @@
 {
-  "id": "tweaks",
-  "name": "Tweaks",
-  "description": "Personal fullscreen-on-startup script",
+  "id": "my-tweaks",
+  "name": "My Tweaks",
+  "description": "Personal browser tweaks",
   "scripts": {
     "tweaks.uc.js": {
-      "include": [
-        "chrome://browser/content/browser.xhtml"
-      ]
+      "include": ["chrome://browser/content/browser.xhtml"]
+    },
+    "monitor-layout.uc.js": {
+      "include": ["chrome://browser/content/browser.xhtml"]
     }
   },
   "author": "you",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
