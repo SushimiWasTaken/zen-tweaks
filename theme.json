@@ -1,0 +1,14 @@
+{
+  "id": "tweaks",
+  "name": "Tweaks",
+  "description": "Personal fullscreen-on-startup script",
+  "scripts": {
+    "tweaks.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
+  "author": "you",
+  "version": "1.0.0"
+}
