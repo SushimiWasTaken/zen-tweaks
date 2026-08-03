@@ -1,22 +1,29 @@
-window.addEventListener("load", () => {
-  function updateWindowLayout() {
-    const isPortrait = window.screen.availHeight > window.screen.availWidth;
-    const rightSideMenuItem = document.getElementById("zen-toolbar-context-tabs-right");
-    const currentlyRightSide =
-      document.getElementById("navigator-toolbox")?.getAttribute("zen-right-side") === "true";
+(function () {
+  function init() {
+    const toolbox = document.getElementById("navigator-toolbox");
+    if (!toolbox) return;
+    const root = document.documentElement;
 
-    console.log("layout check — portrait:", isPortrait, "rightSide:", currentlyRightSide, "menuItem:", !!rightSideMenuItem);
-
-    if (isPortrait) {
-      if (window.fullScreen) window.fullScreen = false;
-      if (window.windowState !== window.STATE_MAXIMIZED) window.maximize();
-      if (currentlyRightSide && rightSideMenuItem) rightSideMenuItem.click();
-    } else {
-      if (!window.fullScreen) window.fullScreen = true;
-      if (!currentlyRightSide && rightSideMenuItem) rightSideMenuItem.click();
+    function showToolbar() {
+      root.removeAttribute("zen-force-toolbar-hidden");
     }
+    function hideToolbar() {
+      root.setAttribute("zen-force-toolbar-hidden", "true");
+    }
+
+    window.addEventListener("mousemove", (e) => {
+      if (e.clientY <= 4) showToolbar();
+    });
+
+    toolbox.addEventListener("mouseenter", showToolbar);
+    toolbox.addEventListener("mouseleave", hideToolbar);
+
+    hideToolbar();
   }
 
-  updateWindowLayout();
-  setInterval(updateWindowLayout, 1000);
-}, { once: true });
+  if (document.readyState === "complete") {
+    init();
+  } else {
+    window.addEventListener("load", init, { once: true });
+  }
+})();
