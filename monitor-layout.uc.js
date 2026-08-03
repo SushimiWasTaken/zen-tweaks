@@ -1,12 +1,11 @@
 window.addEventListener("load", () => {
   function updateWindowLayout() {
-    const isOnLeftMonitor = window.screenX < window.screen.availLeft + window.screen.availWidth / 2;
+    const isPortrait = window.screen.availHeight > window.screen.availWidth;
     const rightSideMenuItem = document.getElementById("zen-toolbar-context-tabs-right");
-    const currentlyRightSide = document.documentElement.hasAttribute("zen-right-side")
-      || document.getElementById("navigator-toolbox")?.hasAttribute("zen-right-side");
+    const currentlyRightSide = document.getElementById("navigator-toolbox")?.hasAttribute("zen-right-side");
 
-    if (isOnLeftMonitor) {
-      // Left monitor: maximized, windowed, sidebar on left
+    if (isPortrait) {
+      // Portrait monitor (left): maximized, windowed, sidebar on left
       if (window.fullScreen) {
         window.fullScreen = false;
       }
@@ -17,7 +16,7 @@ window.addEventListener("load", () => {
         rightSideMenuItem.click();
       }
     } else {
-      // Right monitor: fullscreen, sidebar on right
+      // Landscape monitor (right): fullscreen, sidebar on right
       if (!window.fullScreen) {
         window.fullScreen = true;
       }
