@@ -1,3 +1,8 @@
-window.addEventListener("load", () => {
+js
+if (document.readyState === "complete") {
   window.fullScreen = true;
-}, { once: true });
+} else {
+  window.addEventListener("load", () => {
+    window.fullScreen = true;
+  }, { once: true });
+}
