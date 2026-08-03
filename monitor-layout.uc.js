@@ -1,3 +1,4 @@
+console.log("monitor-layout.uc.js running");
 window.addEventListener("load", () => {
   function updateWindowLayout() {
     const isPortrait = window.screen.availHeight > window.screen.availWidth;
