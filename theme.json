@@ -13,9 +13,6 @@
     },
     "sidebar-wheel-scroll.uc.js": {
       "include": ["chrome://browser/content/browser.xhtml"]
-    },
-    "autoscroll-wheel-lock.uc.js": {
-      "include": ["chrome://browser/content/browser.xhtml"]
     }
   }
 }
