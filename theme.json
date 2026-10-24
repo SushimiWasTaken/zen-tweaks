@@ -1,15 +1,21 @@
 {
-  "id": "my-tweaks",
-  "name": "My Tweaks",
-  "description": "Personal browser tweaks",
+  "id": "customize-collapsed-sidebar",
+  "name": "Customize Collapsed Sidebar",
+  "description": "Allows you to customize your collapsed sidebar to its fullest potential!",
+  "style": "https://raw.githubusercontent.com/SushimiWasTaken/zen-themes/main/chrome.css",
+  "readme": "https://raw.githubusercontent.com/SushimiWasTaken/zen-themes/main/readme.md",
+  "preferences": "https://raw.githubusercontent.com/SushimiWasTaken/zen-themes/main/preferences.json",
+  "version": "1.0.8",
+  "fork": ["zen"],
   "scripts": {
-    "tweaks.uc.js": {
+    "sidebar-pin.uc.js": {
       "include": ["chrome://browser/content/browser.xhtml"]
     },
-    "monitor-layout.uc.js": {
+    "sidebar-wheel-scroll.uc.js": {
+      "include": ["chrome://browser/content/browser.xhtml"]
+    },
+    "autoscroll-wheel-lock.uc.js": {
       "include": ["chrome://browser/content/browser.xhtml"]
     }
-  },
-  "author": "you",
-  "version": "1.0.1"
+  }
 }
